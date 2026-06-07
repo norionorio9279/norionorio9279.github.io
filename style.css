@@ -1,0 +1,230 @@
+/* ===== リセット & 基本設定 ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* ↓ サイト全体の色はここを変えるだけでOK */
+  --color-bg:      #ffffff;
+  --color-text:    #1a1a1a;
+  --color-muted:   #666666;
+  --color-accent:  #1a1a1a;
+  --color-border:  #e0e0e0;
+  --color-card-bg: #f7f7f7;
+
+  --font-main: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+  --max-width: 860px;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.7;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===== ナビゲーション ===== */
+header {
+  position: sticky;
+  top: 0;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 100;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+nav a {
+  color: var(--color-text);
+  text-decoration: none;
+  margin-left: 28px;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  transition: opacity 0.2s;
+}
+
+nav a:hover {
+  opacity: 0.5;
+}
+
+/* ===== ヒーローセクション ===== */
+#hero {
+  padding: 120px 0 100px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hero-inner {
+  text-align: center;
+}
+
+.hero-sub {
+  font-size: 1rem;
+  color: var(--color-muted);
+  margin-bottom: 8px;
+}
+
+.hero-name {
+  font-size: clamp(3rem, 10vw, 6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.hero-desc {
+  font-size: 1.1rem;
+  color: var(--color-muted);
+  letter-spacing: 0.1em;
+}
+
+/* ===== セクション共通 ===== */
+.section-inner {
+  padding: 80px 0;
+}
+
+.section-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 40px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+section:not(#hero) {
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* ===== About ===== */
+.about-text {
+  font-size: 1.05rem;
+  color: var(--color-text);
+  max-width: 640px;
+}
+
+/* ===== Skills ===== */
+.skills-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skills-list li {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  border-radius: 2px;
+}
+
+/* ===== Works ===== */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.work-card {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  padding: 20px;
+}
+
+/* ↓ 画像を入れるときは img タグに置き換えてください */
+.work-img-placeholder {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  margin-bottom: 16px;
+  letter-spacing: 0.1em;
+}
+
+.work-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.work-desc {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+/* ===== Contact ===== */
+.contact-text {
+  margin-bottom: 24px;
+  color: var(--color-muted);
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 24px;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn:hover {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+/* ===== フッター ===== */
+footer {
+  padding: 32px 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+/* ===== スマホ対応 ===== */
+@media (max-width: 600px) {
+  nav a {
+    margin-left: 16px;
+    font-size: 0.8rem;
+  }
+
+  #hero {
+    padding: 80px 0 60px;
+  }
+
+  .works-grid {
+    grid-template-columns: 1fr;
+  }
+}
