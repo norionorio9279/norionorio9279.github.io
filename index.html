@@ -3,107 +3,214 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Norio – Portfolio</title>
+
+  <!-- SEO -->
+  <title>Norio – 人々の情熱に火を灯すアーティスト</title>
+  <meta name="description" content="歌、発信、コミュニティ運営を通じて、本当にやりたいことを生きる人を増やすアーティスト Norio のポートフォリオサイト。" />
+  <link rel="canonical" href="https://norionorio9279.github.io" />
+
+  <!-- OGP -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Norio – 人々の情熱に火を灯すアーティスト" />
+  <meta property="og:description" content="歌、発信、コミュニティ運営を通じて、本当にやりたいことを生きる人を増やしています。" />
+  <meta property="og:url"         content="https://norionorio9279.github.io" />
+  <meta property="og:locale"      content="ja_JP" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Norio – 人々の情熱に火を灯すアーティスト" />
+  <meta name="twitter:description" content="歌、発信、コミュニティ運営を通じて、本当にやりたいことを生きる人を増やしています。" />
+
   <link rel="stylesheet" href="style.css" />
+
+  <!-- JSオフ時のフォールバック：フェードアップ要素を最初から表示 -->
+  <noscript><style>.fade-up { opacity: 1; transform: none; }</style></noscript>
 </head>
 <body>
 
-  <!-- ========== ナビゲーション ========== -->
-  <header>
+  <!-- ========== NAV ========== -->
+  <header class="nav-wrap" role="banner">
     <div class="container nav">
-      <span class="logo">Norio</span>
-      <nav>
+      <a href="#home" class="logo" aria-label="Norioのトップへ">Norio</a>
+      <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links" aria-label="メインナビゲーション">
         <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#works">Works</a>
+        <a href="#projects">Projects</a>
+        <a href="#content">Content</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- ========== ヒーロー（一番上の大きなエリア） ========== -->
-  <section id="hero">
+  <!-- ========== HOME ========== -->
+  <section id="home" class="hero" aria-label="ヒーロー">
     <div class="container hero-inner">
-      <p class="hero-sub">Hi, I'm</p>
-      <h1 class="hero-name">Norio</h1>
-      <!-- ↓ ひとことキャッチコピーを変えてください -->
-      <p class="hero-desc">Designer & Creator</p>
-    </div>
-  </section>
-
-  <!-- ========== 自己紹介 ========== -->
-  <section id="about">
-    <div class="container section-inner">
-      <h2 class="section-title">About</h2>
-      <p class="about-text">
-        <!-- ↓ 自己紹介文をここに書いてください -->
-        僕の名前はNorioです。
+      <p class="hero-eyebrow fade-up">Norio</p>
+      <h1 class="hero-mission fade-up">人々の情熱に<br>火を灯すアーティスト</h1>
+      <p class="hero-sub fade-up">
+        歌、発信、コミュニティ運営を通じて、<br>
+        本当にやりたいことを生きる人を増やしています。
       </p>
+      <div class="hero-cta fade-up">
+        <a href="#projects" class="btn-primary">Projects を見る</a>
+        <a href="#contact"  class="btn-secondary">Contact</a>
+      </div>
+    </div>
+    <a href="#about" class="scroll-down" aria-label="下にスクロール">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <path d="M12 5v14M5 12l7 7 7-7"/>
+      </svg>
+    </a>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about" aria-labelledby="about-heading">
+    <div class="container section-inner">
+      <p class="section-label fade-up">About</p>
+      <h2 id="about-heading" class="section-heading fade-up">僕のこと</h2>
+      <div class="about-grid fade-up">
+        <div class="about-text">
+          <!-- ↓ 自己紹介文をここに書いてください -->
+          <p>僕の名前はNorioです。</p>
+        </div>
+        <div class="about-photo">
+          <!-- ↓ 写真を入れる場合は <img src="photo.jpg" alt="Norioの写真"> に差し替えてください -->
+          <div class="photo-placeholder" aria-label="プロフィール写真">Photo</div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ========== スキル ========== -->
-  <section id="skills">
+  <!-- ========== PROJECTS ========== -->
+  <section id="projects" aria-labelledby="projects-heading">
     <div class="container section-inner">
-      <h2 class="section-title">Skills</h2>
-      <ul class="skills-list">
-        <!-- ↓ スキルを追加・削除してください -->
-        <li>Python</li>
-        <li>データ分析</li>
-        <li>Photoshop</li>
-        <li>Excel</li>
-      </ul>
-    </div>
-  </section>
+      <p class="section-label fade-up">Projects</p>
+      <h2 id="projects-heading" class="section-heading fade-up">活動・プロジェクト</h2>
+      <div class="projects-grid">
 
-  <!-- ========== 作品・プロジェクト ========== -->
-  <section id="works">
-    <div class="container section-inner">
-      <h2 class="section-title">Works</h2>
-      <div class="works-grid">
+        <article class="project-card fade-up">
+          <span class="project-tag">Music</span>
+          <h3 class="project-title">NeiRo</h3>
+          <p class="project-desc">
+            <!-- ↓ NeiRoの説明を書いてください -->
+            説明を追加してください。
+          </p>
+        </article>
 
-        <!-- ↓ カードを丸ごとコピーして作品を増やせます -->
-        <div class="work-card">
-          <div class="work-img-placeholder">IMAGE</div>
-          <h3 class="work-title">作品タイトル 1</h3>
-          <p class="work-desc">作品の説明をここに書きます。どんなものを作ったか、使った技術など。</p>
-        </div>
+        <article class="project-card fade-up">
+          <span class="project-tag">Music</span>
+          <h3 class="project-title">音楽活動</h3>
+          <p class="project-desc">
+            <!-- ↓ 音楽活動の説明を書いてください -->
+            説明を追加してください。
+          </p>
+        </article>
 
-        <div class="work-card">
-          <div class="work-img-placeholder">IMAGE</div>
-          <h3 class="work-title">作品タイトル 2</h3>
-          <p class="work-desc">作品の説明をここに書きます。どんなものを作ったか、使った技術など。</p>
-        </div>
-
-        <div class="work-card">
-          <div class="work-img-placeholder">IMAGE</div>
-          <h3 class="work-title">作品タイトル 3</h3>
-          <p class="work-desc">作品の説明をここに書きます。どんなものを作ったか、使った技術など。</p>
-        </div>
+        <article class="project-card fade-up">
+          <span class="project-tag">Event</span>
+          <h3 class="project-title">イベント企画</h3>
+          <p class="project-desc">
+            <!-- ↓ イベント企画の説明を書いてください -->
+            説明を追加してください。
+          </p>
+        </article>
 
       </div>
     </div>
   </section>
 
-  <!-- ========== 連絡先・SNS ========== -->
-  <section id="contact">
+  <!-- ========== CONTENT ========== -->
+  <section id="content" aria-labelledby="content-heading">
     <div class="container section-inner">
-      <h2 class="section-title">Contact</h2>
-      <p class="contact-text">お気軽にご連絡ください。</p>
-      <div class="contact-links">
-        <!-- ↓ href="" の中にURLを入れてください。不要な行は削除OK -->
-        <a href="mailto:norionorio9279@gmail.com" class="btn">Email</a>
-<a href="https://www.instagram.com/noriogramer/?hl=ja" class="btn" target="_blank">Instagram</a>
+      <p class="section-label fade-up">Content</p>
+      <h2 id="content-heading" class="section-heading fade-up">発信チャンネル</h2>
+      <div class="sns-list">
+
+        <a href="https://www.instagram.com/noriogramer/?hl=ja"
+           class="sns-card fade-up"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Instagram @noriogramer を開く">
+          <span class="sns-icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </span>
+          <span class="sns-info">
+            <span class="sns-name">Instagram</span>
+            <span class="sns-handle">@noriogramer</span>
+          </span>
+          <svg class="sns-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+
+        <!-- ↓ href に YouTube の URL を入れてください -->
+        <a href="#"
+           class="sns-card fade-up"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="YouTube チャンネルを開く">
+          <span class="sns-icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="5" width="20" height="14" rx="3"/>
+              <polygon points="10,8.5 16,12 10,15.5" fill="currentColor" stroke="none"/>
+            </svg>
+          </span>
+          <span class="sns-info">
+            <span class="sns-name">YouTube</span>
+            <span class="sns-handle">Norio チャンネル</span>
+          </span>
+          <svg class="sns-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+
+        <!-- ↓ href に X (Twitter) の URL を入れてください -->
+        <a href="#"
+           class="sns-card fade-up"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="X (Twitter) を開く">
+          <span class="sns-icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </span>
+          <span class="sns-info">
+            <span class="sns-name">X (Twitter)</span>
+            <span class="sns-handle">@Norio</span>
+          </span>
+          <svg class="sns-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+
       </div>
     </div>
   </section>
 
-  <!-- ========== フッター ========== -->
-  <footer>
-    <div class="container">
-      <p>© 2026 Norio</p>
+  <!-- ========== CONTACT ========== -->
+  <section id="contact" aria-labelledby="contact-heading">
+    <div class="container section-inner contact-wrap">
+      <p class="section-label fade-up">Contact</p>
+      <h2 id="contact-heading" class="section-heading fade-up">お問い合わせ</h2>
+      <p class="contact-text fade-up">
+        お仕事のご依頼、コラボのご提案など、お気軽にご連絡ください。
+      </p>
+      <a href="mailto:norionorio9279@gmail.com" class="btn-primary fade-up">
+        メールを送る
+      </a>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer role="contentinfo">
+    <div class="container footer-inner">
+      <span class="footer-name">Norio</span>
+      <span class="footer-copy">© 2026 Norio. All rights reserved.</span>
     </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
