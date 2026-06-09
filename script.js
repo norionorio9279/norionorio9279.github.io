@@ -13,6 +13,46 @@ const observer = new IntersectionObserver(
 
 document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
 
+// StandFM 最新エピソードを RSS から取得
+async function loadStandFM() {
+  const rssUrl = 'https://stand.fm/rss/67f0d8a087fe90ae17859979';
+  const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(rssUrl)}`;
+  const container = document.getElementById('standfm-episodes');
+  if (!container) return;
+
+  try {
+    const res  = await fetch(proxyUrl);
+    const data = await res.json();
+    const xml  = new DOMParser().parseFromString(data.contents, 'text/xml');
+    const items = Array.from(xml.querySelectorAll('item')).slice(0, 5);
+
+    if (!items.length) {
+      container.innerHTML = '<p class="episodes-loading">エピソードが見つかりませんでした。</p>';
+      return;
+    }
+
+    container.innerHTML = items.map((item) => {
+      const title   = item.querySelector('title')?.textContent?.trim() ?? '';
+      const pubDate = item.querySelector('pubDate')?.textContent ?? '';
+      const guid    = item.querySelector('guid')?.textContent?.trim() ?? '#';
+
+      const date    = new Date(pubDate);
+      const dateStr = isNaN(date)
+        ? ''
+        : date.toLocaleDateString('ja-JP', { month: 'long', day: 'numeric' });
+
+      return `<a href="${guid}" class="episode-item" target="_blank" rel="noopener noreferrer">
+        <span class="episode-title">${title}</span>
+        <span class="episode-date">${dateStr}</span>
+      </a>`;
+    }).join('');
+  } catch {
+    container.innerHTML = '<p class="episodes-loading">読み込みに失敗しました。</p>';
+  }
+}
+
+loadStandFM();
+
 // ハンバーガーメニュー
 const toggle   = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');

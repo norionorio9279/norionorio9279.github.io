@@ -132,6 +132,27 @@
       <h2 id="content-heading" class="section-heading fade-up">発信チャンネル</h2>
       <div class="sns-list">
 
+        <a href="https://stand.fm/channels/67f0d8a087fe90ae17859979"
+           class="sns-card fade-up"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="StandFM チャンネルを開く">
+          <span class="sns-icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="9" y="2" width="6" height="12" rx="3"/>
+              <path d="M5 10a7 7 0 0 0 14 0"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+            </svg>
+          </span>
+          <span class="sns-info">
+            <span class="sns-name">StandFM</span>
+            <span class="sns-handle">のりおのラジオ</span>
+          </span>
+          <svg class="sns-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+
         <a href="https://www.instagram.com/noriogramer/?hl=ja"
            class="sns-card fade-up"
            target="_blank" rel="noopener noreferrer"
@@ -191,6 +212,18 @@
         </a>
 
       </div>
+
+      <!-- 最新配信（StandFM RSS から自動取得） -->
+      <div class="recent-updates fade-up">
+        <p class="recent-label">最近の配信</p>
+        <div id="standfm-episodes">
+          <p class="episodes-loading">読み込み中…</p>
+        </div>
+        <a href="https://stand.fm/channels/67f0d8a087fe90ae17859979"
+           class="episodes-more"
+           target="_blank" rel="noopener noreferrer">すべて聴く →</a>
+      </div>
+
     </div>
   </section>
 
