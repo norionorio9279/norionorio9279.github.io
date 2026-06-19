@@ -213,7 +213,7 @@ body {
 /* ===== About ===== */
 .about-layout {
   display: grid;
-  grid-template-columns: 1fr 320px;
+  grid-template-columns: 1fr 400px;
   gap: 60px;
   align-items: start;
   margin-top: 0;
