@@ -117,7 +117,7 @@ body {
   background:
     radial-gradient(ellipse 130% 55% at 50% -10%, rgba(255,165,50,0.13) 0%, rgba(255,200,80,0.04) 40%, transparent 60%),
     linear-gradient(rgba(253,252,245,0.86), rgba(245,240,227,0.90)),
-    url('https://images.unsplash.com/photo-96qNZJeWzv8?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    url('https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
 }
 
 .hero-inner {
@@ -304,15 +304,15 @@ body {
 
 .music-guitar {
   background: linear-gradient(rgba(253,252,245,0.65), rgba(245,240,227,0.75)),
-    url('https://images.unsplash.com/photo-M_dJ_ScwaLE?auto=format&fit=crop&w=600&q=80') center/cover;
+    url('https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=600&q=80') center/cover;
 }
 .music-mic {
   background: linear-gradient(rgba(253,252,245,0.65), rgba(245,240,227,0.75)),
-    url('https://images.unsplash.com/photo-PrBuMyKauvM?auto=format&fit=crop&w=600&q=80') center/cover;
+    url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80') center/cover;
 }
 .music-concert {
   background: linear-gradient(rgba(253,252,245,0.65), rgba(245,240,227,0.75)),
-    url('https://images.unsplash.com/photo-k9BTg4ViqwM?auto=format&fit=crop&w=600&q=80') center/cover;
+    url('https://images.unsplash.com/photo-1563841930606-67e2bce48b78?auto=format&fit=crop&w=600&q=80') center/cover;
 }
 
 .music-coming {
